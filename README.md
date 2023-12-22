@@ -1,105 +1,58 @@
-<div align="center">
-  <a href="https://hono.dev">
-    <img src="https://raw.githubusercontent.com/honojs/hono/main/docs/images/hono-title.png" width="500" height="auto" alt="Hono"/>
-  </a>
-</div>
+Based on the contents of your lecture notes, here is a suggested assignment incorporating programming in Python and relevant libraries, particularly focusing on neural networks and TensorFlow:
 
-<hr />
+### Assignment: Neural Network Implementation with TensorFlow
 
-<p align="center">
-<a href="https://hono.dev"><b>Documentation :point_right: hono.dev</b></a><br />
-<i>v3 has been released!</i> <a href="docs/MIGRATION.md">Migration guide</b>
-</p>
+**Objective:** Implement and train a neural network using TensorFlow to classify data. This exercise will help you understand the basic architecture, functioning, and application of neural networks in solving real-world problems.
 
-<hr />
+#### Part 1: Understanding Neural Networks
+- **Task 1:** Write a brief explanation of how artificial neural networks are inspired by biological neural networks. Include information about neurons, activation functions, and the structure of simple neural networks.
+- **Task 2:** Choose one activation function (Step Function, Logistic Function, or ReLU) and explain its purpose and how it affects the neural network's learning process.
 
-[![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/honojs/hono/ci.yml?branch=main)](https://github.com/honojs/hono/actions)
-[![GitHub](https://img.shields.io/github/license/honojs/hono)](https://github.com/honojs/hono/blob/main/LICENSE)
-[![npm](https://img.shields.io/npm/v/hono)](https://www.npmjs.com/package/hono)
-[![npm](https://img.shields.io/npm/dm/hono)](https://www.npmjs.com/package/hono)
-[![Bundle Size](https://img.shields.io/bundlephobia/min/hono)](https://bundlephobia.com/result?p=hono)
-[![Bundle Size](https://img.shields.io/bundlephobia/minzip/hono)](https://bundlephobia.com/result?p=hono)
-[![npm type definitions](https://img.shields.io/npm/types/hono)](https://www.npmjs.com/package/hono)
-[![GitHub commit activity](https://img.shields.io/github/commit-activity/m/honojs/hono)](https://github.com/honojs/hono/pulse)
-[![GitHub last commit](https://img.shields.io/github/last-commit/honojs/hono)](https://github.com/honojs/hono/commits/main)
-[![Deno badge](https://img.shields.io/endpoint?url=https%3A%2F%2Fdeno-visualizer.danopia.net%2Fshields%2Flatest-version%2Fx%2Fhono%2Fmod.ts)](https://doc.deno.land/https/deno.land/x/hono/mod.ts)
-[![Discord badge](https://img.shields.io/discord/1011308539819597844?label=Discord&logo=Discord)](https://discord.gg/KMh2eNSdxV)
+#### Part 2: Implementing a Simple Neural Network
+- **Task 3:** Using TensorFlow, create a simple neural network to classify whether it will rain today based on two inputs: humidity and air pressure. Use a dataset of your choice or create a simulated one with random numbers.
+    - Define the architecture with an input layer, one hidden layer with a ReLU activation function, and an output layer.
+    - Train the network using stochastic gradient descent and evaluate its performance.
 
-Hono - _**\[炎\] means flame🔥 in Japanese**_ - is a small, simple, and ultrafast web framework for the Edges.
-It works on any JavaScript runtime: Cloudflare Workers, Fastly Compute@Edge, Deno, Bun, Vercel, Lagon, AWS Lambda, and Node.js.
+#### Part 3: Image Recognition with Convolutional Neural Networks (CNNs)
+- **Task 4:** Implement a convolutional neural network using TensorFlow to recognize handwritten digits from the MNIST dataset.
+    - Set up the dataset and preprocess the data.
+    - Build a CNN with at least one convolutional layer, one pooling layer, and a dense layer for classification.
+    - Train the model and evaluate its accuracy on the test set.
 
-Fast, but not only fast.
+#### Part 4: Reflective Questions
+- **Task 5:** Reflect on the process of training a neural network. Discuss the challenges you faced in terms of model architecture, overfitting, or any other aspect. How did you overcome these challenges?
+- **Task 6:** Explore how changing different parameters (like the number of neurons in a layer, learning rate, or number of epochs) affects the performance of the network. Document your findings and provide a summary.
 
-```ts
-import { Hono } from 'hono'
-const app = new Hono()
+#### Submission Requirements:
+- A Python script for each task.
+- A report including your explanation for Task 1 and Task 2, the architecture of the neural networks used in Task 3 and Task 4, your reflections for Task 5, and your findings for Task 6.
+- Screenshots or a video demonstrating the working model, especially for Task 3 and Task 4.
+- Ensure that the code is well-commented to understand the structure and logic of your neural network.
 
-app.get('/', (c) => c.text('Hono!'))
+### Resources:
+- TensorFlow Documentation: [TensorFlow Docs](https://www.tensorflow.org/)
+- MNIST dataset: Available in TensorFlow or as a standalone dataset.
 
-export default app
-```
+By working through these tasks, students will gain hands-on experience in neural network design and training, use of TensorFlow, and problem-solving with AI. Encourage them to experiment with different architectures and parameters to see the impact on model performance.
 
-## Quick Start
+Objective: To introduce students to deep learning concepts and techniques through hands-on experience using Google Colab and Python.
 
-```
-npm create hono@latest my-app
-```
+Instructions:
 
-## Features
+1. Create a new notebook on Google Colab.
+2. Install necessary libraries such as TensorFlow, Keras, NumPy, Pandas, Matplotlib, and Seaborn.
+3. Load the MNIST dataset into your notebook. This dataset contains grayscale images of handwritten digits from 0-9.
+4. Split the data into training and testing sets.
+5. Build a simple neural network model using Keras that can classify the digits in the dataset. Use ReLU activation function and softmax output layer.
+6. Train the model using the training set.
+7. Evaluate the performance of the model using the testing set.
+8. Visualize the results using Matplotlib or Seaborn.
+9. Write a brief report summarizing your findings and discussing any challenges you faced during the implementation.
 
-- **Ultrafast** 🚀 - The router `RegExpRouter` is really fast. Not using linear loops. Fast.
-- **Lightweight** 🪶 - The `hono/tiny` preset is under 12kB. Hono has zero dependencies and uses only the Web Standard API.
-- **Multi-runtime** 🌍 - Works on Cloudflare Workers, Fastly Compute@Edge, Deno, Bun, Lagon, AWS Lambda, or Node.js. The same code runs on all platforms.
-- **Batteries Included** 🔋 - Hono has built-in middleware, custom middleware, and third-party middleware. Batteries included.
-- **Delightful DX** 🛠️ - Super clean APIs. First-class TypeScript support. Now, we've got "Types".
+Grading Criteria:
 
-## Benchmarks
+* Completeness of the code (i.e., all required steps are implemented)
+* Accuracy of the model (i.e., high classification accuracy on the testing set)
+* Clarity of the report (i.e., easy to understand and well-structured)
 
-**Hono is the fastest**, compared to other routers for Cloudflare Workers.
-
-```
-Hono x 402,820 ops/sec ±4.78% (80 runs sampled)
-itty-router x 212,598 ops/sec ±3.11% (87 runs sampled)
-sunder x 297,036 ops/sec ±4.76% (77 runs sampled)
-worktop x 197,345 ops/sec ±2.40% (88 runs sampled)
-Fastest is Hono
-✨  Done in 28.06s.
-```
-
-## Documentation
-
-The documentation is available on [hono.dev](https://hono.dev).
-
-## Migration
-
-The migration guide is available on [docs/MIGRATION.md](docs/MIGRATION.md).
-
-## Communication
-
-[Twitter](https://twitter.com/honojs) and [Discord channel](https://discord.gg/KMh2eNSdxV) are available.
-
-## Contributing
-
-Contributions Welcome! You can contribute in the following ways.
-
-- Create an Issue - Propose a new feature. Report a bug.
-- Pull Request - Fix a bug and typo. Refactor the code.
-- Create third-party middleware - Instruct below.
-- Share - Share your thoughts on the Blog, Twitter, and others.
-- Make your application - Please try to use Hono.
-
-For more details, see [docs/CONTRIBUTING.md](docs/CONTRIBUTING.md).
-
-## Contributors
-
-Thanks to [all contributors](https://github.com/honojs/hono/graphs/contributors)!
-
-## Authors
-
-Yusuke Wada <https://github.com/yusukebe>
-
-_RegExpRouter_, _SmartRouter_, _LinearRouter_, and _PatternRouter_ are created by Taku Amano <https://github.com/usualoma>
-
-## License
-
-Distributed under the MIT License. See [LICENSE](LICENSE) for more information.
+Note: This lab is designed to be completed within two hours.
